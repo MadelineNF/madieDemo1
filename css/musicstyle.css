@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    @import url('https://fonts.googleapis.com/css?family=Karla:400,700');
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Karla', sans-serif;
+}
+
+
+/* Drop down toggle CSS below in media query 
+============================ */
+
+nav p a img {
+    position: relative;
+    bottom: 18px;
+}
+
+#main-nav {
+    background: #FAFAFA;
+    top: 0px;
+    padding: 0px 10px;
+    width: 100%;
+    z-index: 4;
+    overflow: hidden;
+    height: 60px;
+    box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.46);
+}
+
+#main-nav p {
+    width: 30%;
+    padding: 20px;
+    color: #ECF0F1;
+    float: left;
+    font-size: 18px;
+}
+
+#main-nav p a {
+    color: #ECF0F1;
+    text-decoration: none;
+    transition: .25s all;
+    padding: 5px;
+}
+
+#main-nav p a:hover {
+    color: #A6C3DD;
+}
+
+#main-nav ul {
+    float: right;
+    width: 60%;
+    text-align: right;
+    background: #FAFAFA;
+    position: relative;
+    z-index: 5;
+}
+
+#main-nav ul li {
+    display: inline-block;
+}
+
+#main-nav ul a {
+    display: inline-block;
+    padding: 20px;
+    color: #800080;
+    text-decoration: none;
+    transition: all .25s linear;
+    font-size: 18px;
+    border: 0px solid rgba(255, 255, 255, 0.4);
+}
+
+#main-nav ul a:hover {
+    border: dashed 3px;
+    border-radius: 30%;
+    padding: 3px;
+    margin: 14px 17px 0px 17px;
+}
+
+#main-nav input,
+#main-nav label {
+    display: none;
+}
+
+
+/* Drop down toggle CSS start 
+============================ */
+
+@media (max-width: 1950px) {
+    #main-nav p {
+        width: 70%;
+    }
+    #main-nav ul {
+        position: absolute;
+        height: 0px;
+        right: -100%;
+        top: 0px;
+        opacity: 0;
+        transition: all .5s;
+        width: 100%;
+    }
+    #main-nav ul li {
+        opacity: 0;
+        transition: all .5s;
+    }
+    #main-nav label {
+        display: block;
+        margin: 12px 20px 0px 0px;
+        float: right;
+        width: 50px;
+        height: 40px;
+        position: relative;
+        cursor: pointer;
+    }
+    #main-nav label span {
+        display: block;
+        background: #FF4CC1;
+        height: 5px;
+        width: 50px;
+        position: absolute;
+        transition: all .5s;
+        border-radius: 5px;
+    }
+    #main-nav label:hover span {
+        background: #fff;
+    }
+    #main-nav label span:first-child {
+        top: 0px;
+    }
+    #main-nav label span:nth-child(2) {
+        top: 15px;
+    }
+    #main-nav label span:nth-child(3) {
+        top: 30px;
+    }
+    #nav-drop:checked+label span:first-child {
+        top: 40px;
+        height: 7px;
+        z-index: 7;
+        border-radius: 0px 0px 50% 50%;
+        background: #800080;
+        width: 40px;
+    }
+    #nav-drop:checked+label span:nth-child(2) {
+        width: 40px;
+        transform: rotate(45deg);
+        background: #FF4CC1;
+        left: 2px;
+        border-radius: 0px;
+    }
+    #nav-drop:checked+label span:nth-child(3) {
+        transform: rotate(-45deg);
+        width: 40px;
+        top: 15px;
+        background: #FF4CC1;
+        border-radius: 0px;
+        box-shadow: none;
+    }
+    #nav-drop:checked~ul {
+        display: block;
+        width: 100%;
+        height: 60px;
+        position: absolute;
+        top: 60px;
+        left: 0px;
+        right: 0px;
+        opacity: 1;
+        box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.46);
+    }
+    #nav-drop:checked~ul li {
+        opacity: 1;
+        transition: all .5s;
+    }
+}
+
+main {
+    background: #ffff;
+    width: 100%;
+    float: left;
+    -webkit-box-shadow: 0px 9px 23px -1px rgba(89, 88, 89, 1);
+    -moz-box-shadow: 0px 9px 23px -1px rgba(89, 88, 89, 1);
+    box-shadow: 0px 9px 23px -1px rgba(89, 88, 89, 1);
+    margin-top: 30px;
+    margin-bottom: 40px;
+    padding: 10px;
+    min-height: 78vh;
+    min-width: 40%;
+}
+main h1{
+    text-align: center;
+    color: #FF4CC1;
+}
+.row-one{
+    float: left;
+    margin-left:15%;
+}
+.row-two{
+    clear: left;
+    float: left;
+    margin-left:15%;
+}
+figure{
+    width: 33%;
+    border: dashed 2px #FF4CC1;
+    text-align: center;
+    margin-left: 5%;
+    border-radius: 20%;
+    margin-bottom: 5%;
+    overflow: hidden;
+    float: left;
+}
+figure img{
+    width: 100%
+}
+audio{
+    margin-bottom: 10px;
+    margin-top: 35px;
+}
+figcaption p{
+    text-align: center;
+    padding-top: 30px;
+    color: #800080;
+    background: ECF0F1;
+}
+
+footer {
+    text-align: center;
+    height: 5%;
+    width: 100%;
+    background: rgba(245, 76, 193, 0.4);
+    clear: both;
+    position: fixed;
+    bottom: 0;
+    padding-top: 5px;
+}
+
+footer span {
+    color: #FF4CC1;
+}
+
+footer a {
+    color: #800080;
+    text-decoration: none;
+}
